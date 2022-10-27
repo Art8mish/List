@@ -1,0 +1,39 @@
+digraph list{
+	rankdir=LR;
+	0[shape=record,color=black,label="<f0>0|value 0|<f1>next 0|<f2>prev 0"]
+	0:<f1>->0:<f0>[style="dashed"]
+	0:<f2>->0:<f0>[style="dashed"]
+	1[shape=record,color=red,label="<f0>1|value -505|<f1>next 5|<f2>prev 6"]
+	1:<f1>->5:<f0>[style="dashed"]
+	1:<f2>->6:<f0>[style="dashed"]
+	2[shape=record,color=green,label="<f0>2|value 16|<f1>next 4|<f2>prev 3"]
+	2:<f1>->4:<f0>[style="dashed"]
+	2:<f2>->3:<f0>[style="dashed"]
+	3[shape=record,color=green,label="<f0>3|value 14|<f1>next 2|<f2>prev 0"]
+	3:<f1>->2:<f0>[style="dashed"]
+	3:<f2>->0:<f0>[style="dashed"]
+	4[shape=record,color=green,label="<f0>4|value 18|<f1>next 0|<f2>prev 2"]
+	4:<f1>->0:<f0>[style="dashed"]
+	4:<f2>->2:<f0>[style="dashed"]
+	5[shape=record,color=red,label="<f0>5|value -505|<f1>next 7|<f2>prev 1"]
+	5:<f1>->7:<f0>[style="dashed"]
+	5:<f2>->1:<f0>[style="dashed"]
+	6[shape=record,color=red,label="<f0>6|value -505|<f1>next 1|<f2>prev 0"]
+	6:<f1>->1:<f0>[style="dashed"]
+	6:<f2>->0:<f0>[style="dashed"]
+	7[shape=record,color=red,label="<f0>7|value -505|<f1>next 8|<f2>prev 5"]
+	7:<f1>->8:<f0>[style="dashed"]
+	7:<f2>->5:<f0>[style="dashed"]
+	8[shape=record,color=red,label="<f0>8|value -505|<f1>next 9|<f2>prev 7"]
+	8:<f1>->9:<f0>[style="dashed"]
+	8:<f2>->7:<f0>[style="dashed"]
+	9[shape=record,color=red,label="<f0>9|value -505|<f1>next 0|<f2>prev 8"]
+	9:<f1>->0:<f0>[style="dashed"]
+	9:<f2>->8:<f0>[style="dashed"]
+
+	HEAD[shape="hexagon",label="HEAD = 3",]	HEAD->3:<f0>
+
+	TALE[shape="hexagon",label="TALE = 4",]	TALE->4:<f0>
+
+	FREE[shape="hexagon",label="FREE = 6",]	FREE->6:<f0>
+}
