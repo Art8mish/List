@@ -151,10 +151,10 @@ int CreateHtmFile(void)
     fprintf(htm_f, "<font size=20 color=green>Всем привет, "
                    "меня зовут <font color=red>ВЛАД ШИЛО</font>,"
                    "я люблю физику и ебаться в рот!))</font>\n"
-                   "<img width=600 src=\"../images/vlad.png\"><br>");
+                   "<img width=600 src=\"../images/vlad.png\"><br>\n");
     for (int i = 1; i < graph_counter; i++)
     {
-        fprintf(htm_f, "<img width=1500 src=\"../images/graph%d.png\"><br>", i);
+        fprintf(htm_f, "<img width=1300 src=\"../images/graph%d.png\"><br>\n", i);
     }
 
     int fclose_err = fclose(htm_f);
