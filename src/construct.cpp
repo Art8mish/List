@@ -12,7 +12,7 @@ int ListContextCtor(struct ListContext *list)
     list->size = 0;
 
     list->head = 1;
-    list->tale = 1;
+    list->tail = 1;
     list->free = 1;
 
     int initialize_err = InitializeNodes(list);
@@ -53,7 +53,7 @@ int ListContextDtor(struct ListContext *list)
     list->size     = 0;
 
     list->head     = 0;
-    list->tale     = 0;
+    list->tail     = 0;
     list->free     = 0;
 
     list->error |= CODE_DEAD_LIST;

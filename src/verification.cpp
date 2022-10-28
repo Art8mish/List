@@ -18,39 +18,42 @@ int ListVerification(struct ListContext *list)
     INSPECT_LIST(list->nodes    == NULL,       ERROR_CODE_NULL_NODES_PTR);
     INSPECT_LIST(list->capacity <= list->size, ERROR_CODE_SIZE_DISCREPANCY);
     INSPECT_LIST(list->head     <= 0,          ERROR_CODE_INCORRECT_HEAD);
-    INSPECT_LIST(list->tale     <= 0,          ERROR_CODE_INCORRECT_TALE);
+    INSPECT_LIST(list->tail     <= 0,          ERROR_CODE_INCORRECT_TAIL);
     INSPECT_LIST(list->free     <= 0,          ERROR_CODE_INCORRECT_FREE);
-    //INSPECT_LIST(list->head == list->tale &&
-    //             list->size >  1,              ERROR_CODE_HEAD_IS_TALE);
+    //INSPECT_LIST(list->head == list->tail &&
+    //             list->size >  1,              ERROR_CODE_HEAD_IS_TAIL);
     //INSPECT_LIST(list->head == list->free,     ERROR_CODE_HEAD_IS_FREE);
-    //INSPECT_LIST(list->tale == list->free,     ERROR_CODE_TALE_IS_FREE);
+    //INSPECT_LIST(list->tail == list->free,     ERROR_CODE_TAIL_IS_FREE);
     
     if (list->error != 0)
-        DUMPLIST(list);
+        DUMPLIST(list, "ERROR IN VERIFICATION");
 
     return SUCCESS;
 }
 
-int DumpList(struct ListContext *list, const char *file_name,
-             int line_num, const char *func_name)
+int DumpList(struct ListContext *list, const char *comment, 
+             const char *file_name, int line_num, const char *func_name)
 {
     ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
 
     ERROR_CHECK(file_name == NULL, ERROR_NULL_PTR);
     ERROR_CHECK(func_name == NULL, ERROR_NULL_PTR);
 
-    FILE *dump_f = fopen(DUMP_FILE, "a");
+    FILE *dump_f = fopen(HTM_FILE, "a");
     ERROR_CHECK(dump_f == NULL, ERROR_OPENING_FILE);
 
     fprintf(dump_f, "\nList DUMP at %s(line: %d) at %s\n", file_name, line_num, func_name);
+    fprintf(dump_f, "<b>%s</b>\n", comment);
     fprintf(dump_f, "List[%p]\n", list);
     fprintf(dump_f, "{\n");
-    fprintf(dump_f, "    capacity = %d\n",   list->capacity);
-    fprintf(dump_f, "    size     = %d\n\n", list->size);
+    fprintf(dump_f, "\tcapacity = %d\n",   list->capacity);
+    fprintf(dump_f, "\tsize     = %d\n\n", list->size);
 
-    fprintf(dump_f, "    head = %d\n",   list->head);
-    fprintf(dump_f, "    tale = %d\n",   list->tale);
-    fprintf(dump_f, "    free = %d\n\n", list->free);
+    fprintf(dump_f, "\thead = %d\n",   list->head);
+    fprintf(dump_f, "\ttail = %d\n",   list->tail);
+    fprintf(dump_f, "\tfree = %d\n\n", list->free);
+    
+    fprintf(dump_f, "\tis_sorted = %d\n", list->is_sorted);
     fprintf(dump_f, "}\n\n");
 
     if (list->error != 0)
@@ -59,9 +62,9 @@ int DumpList(struct ListContext *list, const char *file_name,
         PRINT_ERROR(ERROR_CODE_NULL_NODES_PTR);
         PRINT_ERROR(ERROR_CODE_SIZE_DISCREPANCY);
         PRINT_ERROR(ERROR_CODE_INCORRECT_HEAD);
-        PRINT_ERROR(ERROR_CODE_INCORRECT_TALE);
+        PRINT_ERROR(ERROR_CODE_INCORRECT_TAIL);
         PRINT_ERROR(ERROR_CODE_INCORRECT_FREE);
-        PRINT_ERROR(ERROR_CODE_HEAD_IS_TALE);
+        PRINT_ERROR(ERROR_CODE_HEAD_IS_TAIL);
     }
 
     else
@@ -76,8 +79,8 @@ int DumpList(struct ListContext *list, const char *file_name,
                 list->nodes[i].prev);
             if (i == list->head)
                 fprintf(dump_f, "  <--- HEAD");
-            if (i == list->tale)
-                fprintf(dump_f, "  <--- TALE");
+            if (i == list->tail)
+                fprintf(dump_f, "  <--- TAIL");
             if (i == list->free)
                 fprintf(dump_f, "  <--- FREE");   
             fprintf(dump_f, "\n");
@@ -85,10 +88,20 @@ int DumpList(struct ListContext *list, const char *file_name,
         fprintf(dump_f, "    }\n");
     }
 
-    fprintf(dump_f, "\nEnd of DUMP...\n\n");
-
     int fclose_err = fclose(dump_f);
     ERROR_CHECK(fclose_err, ERROR_CLOSING_FILE);
+
+    int create_graph_err = CreateGraph(list);
+    ERROR_CHECK(create_graph_err, ERROR_CREATE_GRAPH);
+    int add_graph_png_err = AddGraphPng();
+    ERROR_CHECK(add_graph_png_err, ERROR_ADD_GRAPH);
+    graph_counter++;
+
+    fprintf(dump_f, "<hr>\n");
+
+    fprintf(dump_f, "\nEnd of DUMP...\n\n");
+
+    
 
     return SUCCESS;
 }
@@ -101,27 +114,41 @@ int CreateGraph(struct ListContext *list)
     ERROR_CHECK(graph_f == NULL, ERROR_OPENING_FILE);
 
 
-    fprintf(graph_f, "digraph list{\n\trankdir=LR;\n");
-    for (unsigned int i = 0; i < list->capacity; i++)
+    fprintf(graph_f, "digraph list{\n\trankdir=LR;\nspline = ortho;\n");
+    fprintf(graph_f, "\t%d[shape=record,color=%s,label=\"<f0>%d|data %d|<f1>next %d|<f2>prev %d\"]\n",
+                        0, "black", 0, list->nodes[0].value, list->nodes[0].next, list->nodes[0].prev);
+    for (unsigned int i = 1; i < list->capacity; i++)
     {
-        const char *color = "red";
+        const char *color = "seagreen";
+        const char *fill_color = "darkolivegreen2";
         if (list->nodes[i].value != LIST_POISON_VALUE)
-            color = "green";
-        if(i == 0)
-            color = "black";
-        fprintf(graph_f, "\t%d[shape=record,color=%s,label=\"<f0>%d|value %d|<f1>next %d|<f2>prev %d\"]\n",
-                         i, color, i, list->nodes[i].value, list->nodes[i].next, list->nodes[i].prev);
-        fprintf(graph_f, "\t%d:<f1>->%d:<f0>[style=\"dashed\"]\n", i, list->nodes[i].next);
-        fprintf(graph_f, "\t%d:<f2>->%d:<f0>[style=\"dashed\"]\n", i, list->nodes[i].prev);
+        {
+            color = "red3";
+            fill_color = "peachpuff";
+        }
+        fprintf(graph_f, "\t%d[weight = 1000,style=\"filled\",fillcolor=\"%s\"shape=record,color=%s,"
+                         "label=\"<f0>adrs %d|data %d|{<f2>prev %d | <f1>next %d}\"]\n",
+                         i, fill_color, color, i, list->nodes[i].value, list->nodes[i].prev, list->nodes[i].next);
+        if (list->nodes[i].next != 0)
+            fprintf(graph_f, "\t%d:<f1>->%d:<f2>[style=\"dashed\"]\n", i, list->nodes[i].next);
+        if (list->nodes[i].prev != 0)  {}
+            //fprintf(graph_f, "\t%d:<f2>->%d:<f1>[style=\"dashed\"]\n", i, list->nodes[i].prev);
     }
-    fprintf(graph_f, "\n\tHEAD[shape=\"hexagon\",label=\"HEAD = %d\",]", list->head);
-    fprintf(graph_f, "\tHEAD->%d:<f0>\n", list->head);
-    fprintf(graph_f, "\n\tTALE[shape=\"hexagon\",label=\"TALE = %d\",]", list->tale);
-    fprintf(graph_f, "\tTALE->%d:<f0>\n", list->tale);
-    fprintf(graph_f, "\n\tFREE[shape=\"hexagon\",label=\"FREE = %d\",]", list->free);
-    fprintf(graph_f, "\tFREE->%d:<f0>\n", list->free);
-    fprintf(graph_f, "}\n");
 
+    //for (unsigned int i = 1; i < list->capacity; i++)
+      //  fprintf(graph_f, "\t{rank=same;%d;}", i);
+
+    fprintf(graph_f, "\nHEAD[style=\"filled\",fillcolor=\"skyblue\",label=\"HEAD = %d\"]", list->head);
+    fprintf(graph_f, "\tHEAD->%d:<f0>{rank = same; %d; HEAD;}\n", list->head, list->head);
+
+    fprintf(graph_f, "\nTAIL[style=\"filled\",fillcolor=\"skyblue\",label=\"TAIL = %d\"]", list->tail);
+    fprintf(graph_f, "\tTAIL->%d:<f0> {rank = same; %d; TAIL;}; \n", list->tail, list->tail);
+
+    fprintf(graph_f, "\nFREE[style=\"filled\",fillcolor=\"skyblue\",label=\"FREE = %d\"]", list->free);
+    fprintf(graph_f, "\tFREE->%d:<f0>{rank = same; %d; FREE;};\n", list->free, list->free);
+
+    fprintf(graph_f, "}\n");
+    
     int fclose_err = fclose(graph_f);
     ERROR_CHECK(fclose_err, ERROR_CLOSING_FILE);
 
@@ -135,28 +162,22 @@ int SaveGraphPng(void)
     char command[100] = "dot graph.gv -Tpng -o images/graph";
     char com_part[] = ".png";
 
-    sprintf(command, "%s%d%s",command, graph_counter++, com_part);
+    sprintf(command, "%s%d%s",command, graph_counter, com_part);
 
     system(command);
 
     return SUCCESS;
 }
 
-int CreateHtmFile(void)
+int AddGraphPng(void)
 {
-    FILE *htm_f = fopen(HTM_FILE, "w");
+    FILE *htm_f = fopen(HTM_FILE, "a");
     ERROR_CHECK(htm_f == NULL, ERROR_OPENING_FILE);
 
-    fprintf(htm_f, "<pre>\n");
-    fprintf(htm_f, "<font size=20 color=green>Всем привет, "
-                   "меня зовут <font color=red>ВЛАД ШИЛО</font>,"
-                   "я люблю физику и ебаться в рот!))</font>\n"
-                   "<img width=600 src=\"../images/vlad.png\"><br>\n");
-    for (int i = 1; i < graph_counter; i++)
-    {
-        fprintf(htm_f, "<img width=1300 src=\"../images/graph%d.png\"><br>\n", i);
-    }
-
+    //fprintf(htm_f, "<pre>\n");
+    
+    fprintf(htm_f, "<img width=900 src=\"../images/graph%d.png\"><br><hr>\n", graph_counter);
+    
     int fclose_err = fclose(htm_f);
     ERROR_CHECK(fclose_err, ERROR_CLOSING_FILE);
 

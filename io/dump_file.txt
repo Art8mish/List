@@ -6,16 +6,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -36,16 +36,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -66,17 +66,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -96,17 +96,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -126,19 +126,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -156,19 +156,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -186,12 +186,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -200,7 +200,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -216,12 +216,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -230,7 +230,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -246,12 +246,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -260,7 +260,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -276,19 +276,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00DB2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -306,16 +306,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -336,16 +336,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -366,17 +366,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -396,17 +396,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -426,19 +426,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -456,19 +456,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -486,12 +486,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -500,7 +500,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -516,12 +516,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -530,7 +530,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -546,12 +546,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -560,7 +560,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -576,19 +576,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00DF2B30]
+    Nodes[00E034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -606,16 +606,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -636,16 +636,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -666,17 +666,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -696,17 +696,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -726,19 +726,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -756,19 +756,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -786,12 +786,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -800,7 +800,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -816,12 +816,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -830,7 +830,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -846,12 +846,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -860,7 +860,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -876,19 +876,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00FA2B30]
+    Nodes[00DD34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -906,16 +906,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -936,16 +936,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -966,17 +966,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -996,17 +996,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -1026,19 +1026,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -1056,19 +1056,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -1086,12 +1086,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1100,7 +1100,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1116,12 +1116,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1130,7 +1130,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1146,12 +1146,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1160,7 +1160,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1176,19 +1176,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00E12B30]
+    Nodes[00ED34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -1206,16 +1206,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1236,16 +1236,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1266,17 +1266,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -1296,17 +1296,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -1326,19 +1326,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -1356,19 +1356,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -1386,12 +1386,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1400,7 +1400,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1416,12 +1416,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1430,7 +1430,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1446,12 +1446,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1460,7 +1460,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1476,19 +1476,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00ED2B30]
+    Nodes[00EF34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -1506,16 +1506,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1536,16 +1536,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1566,17 +1566,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -1596,17 +1596,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -1626,19 +1626,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -1656,19 +1656,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -1686,12 +1686,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1700,7 +1700,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1716,12 +1716,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1730,7 +1730,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1746,12 +1746,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -1760,7 +1760,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -1776,19 +1776,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00882B30]
+    Nodes[00E834D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -1806,16 +1806,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1836,16 +1836,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -1866,17 +1866,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -1896,17 +1896,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -1926,19 +1926,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -1956,19 +1956,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -1986,12 +1986,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2000,7 +2000,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2016,12 +2016,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2030,7 +2030,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2046,12 +2046,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2060,7 +2060,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2076,19 +2076,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00E434D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -2106,16 +2106,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2136,16 +2136,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2166,17 +2166,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -2196,17 +2196,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -2226,19 +2226,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -2256,19 +2256,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -2286,12 +2286,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2300,7 +2300,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2316,12 +2316,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2330,7 +2330,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2346,12 +2346,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2360,7 +2360,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2376,19 +2376,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[006D2B30]
+    Nodes[00FB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -2406,16 +2406,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2436,16 +2436,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2466,17 +2466,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -2496,17 +2496,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -2526,19 +2526,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -2556,19 +2556,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -2586,12 +2586,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2600,7 +2600,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2616,12 +2616,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2630,7 +2630,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2646,12 +2646,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2660,7 +2660,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2676,19 +2676,19 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00EA2B30]
+    Nodes[00EB34D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
         [7]       -505      8        5   
@@ -2706,16 +2706,16 @@ List[0061FEFC]
     size     = 0
 
     head = 1
-    tale = 1
+    tail = 1
     free = 1
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TALE  <--- FREE
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
         [2]       -505      3        1   
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2736,16 +2736,16 @@ List[0061FEFC]
     size     = 1
 
     head = 1
-    tale = 1
+    tail = 1
     free = 2
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
-        [1]       15        0        0     <--- HEAD  <--- TALE
+        [1]       15        0        0     <--- HEAD  <--- TAIL
         [2]       -505      3        0     <--- FREE
         [3]       -505      4        2   
         [4]       -505      5        3   
@@ -2766,17 +2766,17 @@ List[0061FEFC]
     size     = 2
 
     head = 1
-    tale = 2
+    tail = 2
     free = 3
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        0     <--- HEAD
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       -505      4        0     <--- FREE
         [4]       -505      5        3   
         [5]       -505      6        4   
@@ -2796,17 +2796,17 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 2
+    tail = 2
     free = 4
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
-        [2]       16        0        1     <--- TALE
+        [2]       16        0        1     <--- TAIL
         [3]       14        1        0     <--- HEAD
         [4]       -505      5        0     <--- FREE
         [5]       -505      6        4   
@@ -2826,19 +2826,19 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 4
+    tail = 4
     free = 5
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        3   
         [2]       16        4        1   
         [3]       14        1        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      6        0     <--- FREE
         [6]       -505      7        5   
         [7]       -505      8        6   
@@ -2856,19 +2856,19 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       15        2        5   
         [2]       16        4        1   
         [3]       14        5        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       19        1        3   
         [6]       -505      7        0     <--- FREE
         [7]       -505      8        6   
@@ -2886,12 +2886,12 @@ List[0061FEFC]
     size     = 6
 
     head = 3
-    tale = 6
+    tail = 6
     free = 7
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2900,7 +2900,7 @@ List[0061FEFC]
         [3]       14        5        0     <--- HEAD
         [4]       18        6        2   
         [5]       19        1        3   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        0     <--- FREE
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2916,12 +2916,12 @@ List[0061FEFC]
     size     = 5
 
     head = 3
-    tale = 6
+    tail = 6
     free = 5
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2930,7 +2930,7 @@ List[0061FEFC]
         [3]       14        1        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        0     <--- FREE
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2946,12 +2946,12 @@ List[0061FEFC]
     size     = 4
 
     head = 3
-    tale = 6
+    tail = 6
     free = 1
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
@@ -2960,7 +2960,7 @@ List[0061FEFC]
         [3]       14        2        0     <--- HEAD
         [4]       18        6        2   
         [5]       -505      7        1   
-        [6]       20        0        4     <--- TALE
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
@@ -2976,21 +2976,1941 @@ List[0061FEFC]
     size     = 3
 
     head = 3
-    tale = 4
+    tail = 4
     free = 6
 
 }
 
-    Nodes[00712B30]
+    Nodes[009034D8]
     {
         phys_adr  value     next     prev
         [0]       0         0        0   
         [1]       -505      5        6   
         [2]       16        4        3   
         [3]       14        2        0     <--- HEAD
-        [4]       18        0        2     <--- TALE
+        [4]       18        0        2     <--- TAIL
         [5]       -505      7        1   
         [6]       -505      1        0     <--- FREE
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 56) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00F634D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        6   
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      7        1   
+        [6]       -505      1        0     <--- FREE
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00E234D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00ED34D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00F034D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00E934D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 13) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 0
+
+    head = 1
+    tail = 1
+    free = 1
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]       -505      3        1   
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 19) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 1
+
+    head = 1
+    tail = 1
+    free = 2
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        0        0     <--- HEAD  <--- TAIL
+        [2]       -505      3        0     <--- FREE
+        [3]       -505      4        2   
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 23) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 2
+
+    head = 1
+    tail = 2
+    free = 3
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        0     <--- HEAD
+        [2]       16        0        1     <--- TAIL
+        [3]       -505      4        0     <--- FREE
+        [4]       -505      5        3   
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 27) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 3
+
+    head = 3
+    tail = 2
+    free = 4
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        0        1     <--- TAIL
+        [3]       14        1        0     <--- HEAD
+        [4]       -505      5        0     <--- FREE
+        [5]       -505      6        4   
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 4
+    free = 5
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       -505      6        0     <--- FREE
+        [6]       -505      7        5   
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 4
+    free = 6
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        0        2     <--- TAIL
+        [5]       19        1        3   
+        [6]       -505      7        0     <--- FREE
+        [7]       -505      8        6   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 36) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 6
+
+    head = 3
+    tail = 6
+    free = 7
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        5   
+        [2]       16        4        1   
+        [3]       14        5        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       19        1        3   
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        0     <--- FREE
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 46) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 5
+
+    head = 3
+    tail = 6
+    free = 5
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       15        2        3   
+        [2]       16        4        1   
+        [3]       14        1        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        0     <--- FREE
+        [6]       20        0        4     <--- TAIL
+        [7]       -505      8        5   
+        [8]       -505      9        7   
+        [9]       -505      0        8   
+    }
+
+End of DUMP...
+
+
+List DUMP at src/main.cpp(line: 51) at main
+List[0061FEFC]
+{
+    capacity = 10
+    size     = 4
+
+    head = 3
+    tail = 6
+    free = 1
+
+}
+
+    Nodes[00E134D8]
+    {
+        phys_adr  value     next     prev
+        [0]       0         0        0   
+        [1]       -505      5        0     <--- FREE
+        [2]       16        4        3   
+        [3]       14        2        0     <--- HEAD
+        [4]       18        6        2   
+        [5]       -505      7        1   
+        [6]       20        0        4     <--- TAIL
         [7]       -505      8        5   
         [8]       -505      9        7   
         [9]       -505      0        8   
