@@ -1,261 +1,201 @@
 
 #include "../include/list.h"
 
-#define VERIFICATION_BEFORE()                                           \
-            int verification_err = ListVerification(list);              \
-            ERROR_CHECK(verification_err, ERROR_VERIFICATION)          
+#define VERIFICATION()                                                  \
+            do                                                          \
+            {                                                           \
+                int verification_err = listVerification(list);          \
+                ERROR_CHECK(verification_err, ERROR_VERIFICATION);      \
+            } while(false)
 
-#define VERIFICATION_AFTER()                                            \
-            verification_err = ListVerification(list);                  \
-            ERROR_CHECK(verification_err, ERROR_VERIFICATION);
+#define FREE_NODE list->nodes[list->free]
+#define TAIL_NODE list->nodes[list->tail]
+#define HEAD_NODE list->nodes[list->head]
+#define CURR_NODE list->nodes[curr_node]
 
-int ListPushBack(struct ListContext *list, list_t arg,
-                 unsigned int *new_node_ptr)
+#define INSPECT_LIST(cond, err_code)                \
+            do                                      \
+            {                                       \
+                if (cond)                           \
+                    list->error |= err_code;        \
+            } while(false)  
+
+
+
+int listPushBack(struct List *list, list_elem_t arg,
+                 unsigned int *new_node_indx)
 {
     ERROR_CHECK(list         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(new_node_ptr == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(new_node_indx == NULL, ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
-
-    FREE_NODE.value = arg;        
-
-    unsigned int curr_node = list->free;
-    list->free = FREE_NODE.next;
-    FREE_NODE.prev = 0;
-
-    TAIL_NODE.next  = curr_node;    
-    CURR_NODE.prev  = list->tail;   
-
-    list->tail = curr_node;
-
-    TAIL_NODE.next = 0;
-    HEAD_NODE.prev = 0;
-    
-    list->size += 1;
-    *new_node_ptr = curr_node;
-
-    list->is_sorted = false;
-
-    VERIFICATION_AFTER();
+    int list_insert_err = listInsertAfter(list, list->tail, arg, new_node_indx);
+    ERROR_CHECK(list_insert_err, ERROR_LIST_INSERT_AFTER);
 
     return SUCCESS;
 }
 
-int ListPushFront(struct ListContext *list, list_t arg,
-                  unsigned int *new_node_ptr)
+int listPushFront(struct List *list, list_elem_t arg,
+                  unsigned int *new_node_indx)
 {
     ERROR_CHECK(list         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(new_node_ptr == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(new_node_indx == NULL, ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
-
-    FREE_NODE.value = arg;        
-
-    unsigned int curr_node = list->free;
-    list->free = FREE_NODE.next;
-    FREE_NODE.prev = 0;
-
-    HEAD_NODE.prev  = curr_node;    
-    CURR_NODE.next  = list->head;   
-
-    list->head = curr_node;
-
-    TAIL_NODE.next = 0;
-    HEAD_NODE.prev = 0;
-    
-    list->size += 1;
-    *new_node_ptr = curr_node;
-
-    list->is_sorted = false;
-
-    VERIFICATION_AFTER();
+    int list_insert_err = listInsertBefore(list, list->head, arg, new_node_indx);
+    ERROR_CHECK(list_insert_err, ERROR_LIST_INSERT_BEFORE);
 
     return SUCCESS;
 }
 
-int ListPopBack(struct ListContext *list, list_t *arg)
+int listPopFront(struct List *list, list_elem_t *arg)
 {
     ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
     ERROR_CHECK(arg  == NULL, ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
+    int remove_err = listRemove(list, list->head, arg);
+    ERROR_CHECK(remove_err, ERROR_LIST_REMOVE);
 
-    *arg = TAIL_NODE.value;
-    TAIL_NODE.value = LIST_POISON_VALUE;
-    
-    FREE_NODE.prev = list->tail;
-    TAIL_NODE.next = list->free;
-    list->free = list->tail;
+    return SUCCESS;
+}
 
-    if (list->size != 1)
+int listPopBack(struct List *list, list_elem_t *arg)
+{
+    ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(arg  == NULL, ERROR_NULL_PTR);
+
+    int remove_err = listRemove(list, list->tail, arg);
+    ERROR_CHECK(remove_err, ERROR_LIST_REMOVE);
+
+    return SUCCESS;
+}
+
+int listInsertAfter(struct List *list, unsigned int phys_indx,
+                      list_elem_t arg, unsigned int *new_node_indx)
+{
+    ERROR_CHECK(list          == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(phys_indx     == 0,    ERROR_NULL_INDX);
+    ERROR_CHECK(new_node_indx == NULL, ERROR_NULL_PTR);
+
+    VERIFICATION();
+
+    if (list->size == list->capacity - 2)
     {
-        list->tail = TAIL_NODE.prev;
+        int list_resize_err = listResize(list);
+        ERROR_CHECK(list_resize_err, ERROR_LIST_RESIZE);
+    }
+
+    FREE_NODE.value = arg;
+
+    if (list->size != 0)
+        FREE_NODE.prev  = phys_indx;
+
+    if (list->nodes[phys_indx].next != 0)
+        list->nodes[list->nodes[phys_indx].next].prev = list->free;
+
+    unsigned int curr_node = list->free; 
+    list->free = FREE_NODE.next;
+    FREE_NODE.prev = 0;
+
+    CURR_NODE.next = list->nodes[phys_indx].next;
+    list->nodes[phys_indx].next = curr_node;
+
+    if (phys_indx == list->tail)
+    {
+        list->tail = curr_node;
         TAIL_NODE.next = 0;
     }
 
-    FREE_NODE.prev = 0;
-    
-    list->size -= 1;
+    *new_node_indx = curr_node;
 
-    if (list->size == 0)
-        list->is_sorted = true;
-    else
-        list->is_sorted = false;
+    list->size += 1;
+    list->is_sorted = false;
 
-    VERIFICATION_AFTER();
+    VERIFICATION();    
 
     return SUCCESS;
 }
 
-int ListPopFront(struct ListContext *list, list_t *arg)
+int listInsertBefore(struct List *list, unsigned int phys_indx,
+                     list_elem_t arg, unsigned int *new_node_indx)
 {
-    ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(arg  == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(list          == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(phys_indx     == 0,    ERROR_NULL_INDX);
+    ERROR_CHECK(new_node_indx == NULL, ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
-    
-    *arg = HEAD_NODE.value;
-    HEAD_NODE.value = LIST_POISON_VALUE;        
+    VERIFICATION();
 
-    FREE_NODE.prev = list->head;
-
-    unsigned int curr_node = list->head;
-
-    if (list->size != 1)
+    if (list->size == list->capacity - 2)
     {
-        list->head = HEAD_NODE.next;
+        int list_resize_err = listResize(list);
+        ERROR_CHECK(list_resize_err, ERROR_LIST_RESIZE);
+    }
+
+    if (phys_indx == list->head)
+        list->head = list->free;
+
+    FREE_NODE.value = arg;
+
+    if (list->size != 0)
+        FREE_NODE.prev  = list->nodes[phys_indx].prev;
+
+    if (list->nodes[phys_indx].prev != 0)
+        list->nodes[list->nodes[phys_indx].prev].next = list->free;
+
+    unsigned int curr_node = list->free; 
+    list->free = FREE_NODE.next;
+    FREE_NODE.prev = 0;
+
+    CURR_NODE.next = phys_indx;
+    list->nodes[phys_indx].prev = curr_node;
+
+    if (phys_indx == list->head)
+    {
+        list->head = list->free;
         HEAD_NODE.prev = 0;
     }
-    
-    CURR_NODE.next = list->free;
-    list->free = curr_node;
-    FREE_NODE.prev = 0;    
-    
-    list->size -= 1;
 
-    if (list->size == 0)
-        list->is_sorted = true;
-    else
-        list->is_sorted = false;
-    
-    VERIFICATION_AFTER();
-
-    return SUCCESS;
-}
-
-int ListInsertAfter(struct ListContext *list, unsigned int phys_ptr,
-                    list_t arg, unsigned int *new_node_ptr)
-{
-    ERROR_CHECK(list         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(phys_ptr     == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(new_node_ptr == NULL, ERROR_NULL_PTR);
-
-    VERIFICATION_BEFORE();
-
-    if (phys_ptr == list->tail)
-    {
-        int push_err = ListPushBack(list, arg, new_node_ptr);
-        ERROR_CHECK(push_err, ERROR_PUSH_BACK);
-        
-        return SUCCESS;
-    }
-
-    FREE_NODE.value = arg;
-    FREE_NODE.prev  = phys_ptr;
-
-    list->nodes[list->nodes[phys_ptr].next].prev = list->free;
-
-    unsigned int curr_node = list->free; 
-    list->free = FREE_NODE.next;
-    FREE_NODE.prev = 0;
-
-    CURR_NODE.next = list->nodes[phys_ptr].next;
-    list->nodes[phys_ptr].next = curr_node;
-
-    *new_node_ptr = curr_node;
+    *new_node_indx = curr_node;
 
     list->size += 1;
 
     list->is_sorted = false;
 
-    VERIFICATION_AFTER();    
+    int list_resize_err = listResize(list);
+    ERROR_CHECK(list_resize_err, ERROR_LIST_RESIZE);
+
+    VERIFICATION();    
 
     return SUCCESS;
 }
 
-int ListInsertBefore(struct ListContext *list, unsigned int phys_ptr,
-                     list_t arg, unsigned int *new_node_ptr)
-{
-    ERROR_CHECK(list         == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(phys_ptr     == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(new_node_ptr == NULL, ERROR_NULL_PTR);
-
-    VERIFICATION_BEFORE();
-
-    if (phys_ptr == list->head)
-    {
-        int push_err = ListPushFront(list, arg, new_node_ptr);
-        ERROR_CHECK(push_err, ERROR_PUSH_FRONT);
-
-        return SUCCESS;
-    }
-
-    FREE_NODE.value = arg;
-    FREE_NODE.prev  = list->nodes[phys_ptr].prev;
-
-    list->nodes[list->nodes[phys_ptr].prev].next = list->free;
-
-    unsigned int curr_node = list->free; 
-    list->free = FREE_NODE.next;
-    FREE_NODE.prev = 0;
-
-    CURR_NODE.next = phys_ptr;
-    list->nodes[phys_ptr].prev = curr_node;
-
-    *new_node_ptr = curr_node;
-
-    list->size += 1;
-
-    list->is_sorted = false;
-
-    VERIFICATION_AFTER();    
-
-    return SUCCESS;
-}
-
-int ListRemove(struct ListContext *list, unsigned int phys_ptr,
-               list_t *arg)
+int listRemove(struct List *list, unsigned int phys_indx,
+               list_elem_t *arg)
 {
     ERROR_CHECK(list     == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(phys_ptr == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(phys_indx == 0,    ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
+    VERIFICATION();
 
-    if (phys_ptr == list->tail)
+    ERROR_CHECK(list->size == 0, ERROR_INCORRECT_OPERATION);
+
+    *arg = list->nodes[phys_indx].value;
+    list->nodes[phys_indx].value = LIST_POISON_VALUE;
+
+    if (list->size > 1)
     {
-        int pop_err = ListPopBack(list, arg);
-        ERROR_CHECK(pop_err, ERROR_POP_BACK);
-        
-        return SUCCESS;
+        if (list->nodes[phys_indx].next == 0)
+            list->tail = list->nodes[phys_indx].prev;
+        else
+            list->nodes[list->nodes[phys_indx].next].prev = list->nodes[phys_indx].prev;
+
+        if (list->nodes[phys_indx].prev == 0)
+            list->head = list->nodes[phys_indx].next;
+        else    
+            list->nodes[list->nodes[phys_indx].prev].next = list->nodes[phys_indx].next;
     }
 
-    if (phys_ptr == list->head)
-    {
-        int pop_err = ListPopFront(list, arg);
-        ERROR_CHECK(pop_err, ERROR_POP_FRONT);
-        
-        return SUCCESS;
-    }
-
-    *arg = list->nodes[phys_ptr].value;
-    list->nodes[phys_ptr].value = LIST_POISON_VALUE;
-
-    list->nodes[list->nodes[phys_ptr].next].prev = list->nodes[phys_ptr].prev;
-    list->nodes[list->nodes[phys_ptr].prev].next = list->nodes[phys_ptr].next;
-
-    FREE_NODE.prev = phys_ptr;
-    list->nodes[phys_ptr].next = list->free;
-    list->free = phys_ptr;
+    FREE_NODE.prev = phys_indx;
+    list->nodes[phys_indx].next = list->free;
+    list->free = phys_indx;
     FREE_NODE.prev = 0;
 
     list->size -= 1;
@@ -265,40 +205,50 @@ int ListRemove(struct ListContext *list, unsigned int phys_ptr,
     else
         list->is_sorted = false;
 
-    VERIFICATION_AFTER();
+    int list_resize_err = listResize(list);
+    ERROR_CHECK(list_resize_err, ERROR_LIST_RESIZE);
+
+    VERIFICATION();
     
     return SUCCESS;
 }
 
-int List_Translate_Logical_Position_To_Physical_Adress(struct ListContext *list,
-                                                       unsigned int logic_ptr, 
-                                                       unsigned int *phys_ptr)
+int list_Translate_Logical_Position_To_Physical_Adress(struct List *list,
+                                                       unsigned int logic_indx, 
+                                                       unsigned int *phys_indx)
 {
     ERROR_CHECK(list      == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(logic_ptr == NULL, ERROR_NULL_PTR);
-    ERROR_CHECK(phys_ptr  == NULL, ERROR_NULL_PTR);
+    ERROR_CHECK(logic_indx == 0,    ERROR_NULL_INDX);
+    ERROR_CHECK(phys_indx  == NULL, ERROR_NULL_PTR);
 
-    VERIFICATION_BEFORE();
+    VERIFICATION();
+
+    if (list->is_sorted)
+    {
+        *phys_indx = logic_indx;
+
+        return SUCCESS;
+    }
 
     unsigned int curr_node = list->head;
-    for (unsigned int index = 1; index < logic_ptr; index++)
+    for (unsigned int index = 1; index < logic_indx; index++)
         curr_node = list->nodes[curr_node].next;
 
-    *phys_ptr = curr_node;
+    *phys_indx = curr_node;
 
-    VERIFICATION_AFTER();
+    VERIFICATION();
 
     return SUCCESS;
 }
 
-int ListSlowSort(struct ListContext *list)
+int list_Slowest_Sort(struct List *list)
 {
     ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
 
     if (list->is_sorted)
         return SUCCESS;
 
-    list_t *data  = (list_t*) calloc(list->capacity - 1, sizeof(list_t));
+    list_elem_t *data  = (list_elem_t*) calloc(list->capacity - 1, sizeof(list_elem_t));
     unsigned int curr_node = list->head;
     unsigned int index = 0;
 
@@ -317,7 +267,8 @@ int ListSlowSort(struct ListContext *list)
     }
 
     index += 2;
-    
+
+    //filling list of non-poison values
     for (unsigned int i = 1; i < index; i++)
     {
         list->nodes[i].value = data[i - 1];
@@ -330,14 +281,85 @@ int ListSlowSort(struct ListContext *list)
     list->nodes[index].next  = (index + 1) % list->capacity;
     list->nodes[index].prev  = 0;
 
-    for  (int i = index + 1; i <  list->capacity; i++)
+    //filling free list (poison)
+    for  (unsigned int i = index + 1; i <  list->capacity; i++)
     {
         list->nodes[i].value = LIST_POISON_VALUE;
-        list->nodes[i].next  = (i + 1) % list->capacity;
+        list->nodes[i].next  = i + 1;
         list->nodes[i].prev  = i - 1;
     }
+    list->nodes[list->capacity - 1].next = 0;
 
     free(data);
 
     return SUCCESS;     
+}
+
+int listVerification(struct List *list)
+{
+    ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
+
+    int list_check_err = listCheckError(list);
+    ERROR_CHECK(list_check_err, ERROR_LIST_CHECK_ERROR);
+    
+    if (list->error != 0)
+        LISTDUMP(list, "ERROR IN VERIFICATION");
+
+    return SUCCESS;
+}
+
+int listCheckError(struct List *list)
+{
+    ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
+
+    INSPECT_LIST(list->nodes    == NULL,       ERROR_CODE_NULL_NODES_PTR);
+    INSPECT_LIST(list->capacity <= list->size, ERROR_CODE_SIZE_DISCREPANCY);
+    INSPECT_LIST(list->capacity == 0,          ERROR_CODE_INCORRECT_CAPACITY);
+    INSPECT_LIST(list->head     == 0,          ERROR_CODE_INCORRECT_HEAD);
+    INSPECT_LIST(list->tail     == 0,          ERROR_CODE_INCORRECT_TAIL);
+    INSPECT_LIST(list->free     == 0,          ERROR_CODE_INCORRECT_FREE);
+    INSPECT_LIST(list->nodes    == NULL,       ERROR_CODE_NODES_NULL_PTR);
+    //INSPECT_LIST(list->head == list->tail &&
+    //             list->size >  1,              ERROR_CODE_HEAD_IS_TAIL);
+
+    return SUCCESS;
+}
+
+int listResize(struct List *list)
+{
+    ERROR_CHECK(list == NULL, ERROR_NULL_PTR);
+
+    VERIFICATION();
+
+    size_t capacity = list->capacity;
+
+    if (list->capacity <= 1 )
+        list->capacity = 10;
+
+    else if (list->size >= list->capacity - 2)
+        list->capacity *= 2;
+
+    else
+        return SUCCESS;
+
+    list->nodes = (struct Node*) realloc(list->nodes, list->capacity * sizeof(struct Node));
+    ERROR_CHECK(list->nodes == NULL, ERROR_REALLOC);
+
+    list->free = capacity - 1;
+    list->nodes[list->free].value = LIST_POISON_VALUE;
+    list->nodes[list->free].next  = capacity;
+    list->nodes[list->free].prev  = 0;
+
+    for (unsigned int index = capacity; index < list->capacity; index++)
+    {
+        list->nodes[index].value = LIST_POISON_VALUE;
+        list->nodes[index].next  = index + 1;
+        list->nodes[index].prev  = index - 1;
+    }
+
+    list->nodes[list->capacity - 1].next = 0;
+
+    VERIFICATION();
+
+    return SUCCESS;
 }

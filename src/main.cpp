@@ -3,65 +3,66 @@
 
 int main(void)
 {
-    printf("Leeeet's go!\n\n");
-
-    struct ListContext list = {};
-
-    int ext_err = ListContextCtor(&list); 
+    struct List list = {};
+    
+    int ext_err = listCtor(&list, 15); 
     ERROR_CHECK(ext_err, 1);
 
-    DUMPLIST(&list, "Ctoring");
+    LISTDUMP(&list, "Ctoring");
 
-    unsigned int new_node_ptr = 0;
+    unsigned int new_node_indx = 0;
     
-    ext_err = ListInsertAfter(&list, 1, 15, &new_node_ptr);
+    ext_err = listPushBack(&list, 15, &new_node_indx);
     ERROR_CHECK(ext_err, 2);
-    
-    ext_err = ListInsertAfter(&list, 1, 16, &new_node_ptr);
+
+    ext_err = listPushBack(&list, 16, &new_node_indx);
     ERROR_CHECK(ext_err, 2);
+
+    LISTDUMP(&list, "Add few elements");
     
-    ext_err = ListInsertBefore(&list, 1, 14, &new_node_ptr);
+    ext_err = listPushFront(&list, 14, &new_node_indx);
     ERROR_CHECK(ext_err, 2);
-    
-    DUMPLIST(&list, "Add few elements");
+
+    LISTDUMP(&list, "Add few elements");
 
     for (int i = 2; i < 5; i++)
     {
-        ext_err = ListInsertAfter(&list, i, 16+i, &new_node_ptr);
+        ext_err = listInsertAfter(&list, i, 16+i, &new_node_indx);
         ERROR_CHECK(ext_err, 3);
-
-        printf("node[%d]_ptr = %d\n", i, new_node_ptr);
     }
 
-    //DUMPLIST(&list);
+    LISTDUMP(&list, "After adding elements");
 
-    list_t arg = 0; 
-    ext_err = ListRemove(&list, 5, &arg);
+    //LISTDUMP(&list); 
+    list_elem_t arg = 0; 
+    ext_err = listRemove(&list, 5, &arg);
     ERROR_CHECK(ext_err, 3);
-    printf("arg = %d\n",  arg);
+
+     LISTDUMP(&list, "first remove");
 
 
-    ext_err = ListRemove(&list, 1, &arg);
+    ext_err = listRemove(&list, 1, &arg);
     ERROR_CHECK(ext_err, 3);
-    printf("arg = %d\n",  arg);
 
-    DUMPLIST(&list, "After adding and removing elements");
+    LISTDUMP(&list, "first remove");
 
-    ext_err = ListInsertAfter(&list, 2, 31, &new_node_ptr);
+    ext_err = listInsertAfter(&list, 2, 31, &new_node_indx);
     ERROR_CHECK(ext_err, 2);
 
-    ext_err = ListInsertBefore(&list, 4, 32, &new_node_ptr);
+    ext_err = listInsertBefore(&list, 4, 32, &new_node_indx);
     ERROR_CHECK(ext_err, 2);
 
-    DUMPLIST(&list, "Insert two more elements");
+    LISTDUMP(&list, "Insert two more elements");
 
-    ext_err = ListSlowSort(&list);
+    ext_err = list_Slowest_Sort(&list);
     ERROR_CHECK(ext_err, 5);
 
-    DUMPLIST(&list, "After sorting");
+    LISTDUMP(&list, "After sorting");
 
-    ext_err = ListContextDtor(&list);
+    ext_err = listDtor(&list);
     ERROR_CHECK(ext_err, 5);
+
+    printf("SUCCESSFUL END.\n");
 
     return SUCCESS;
 }

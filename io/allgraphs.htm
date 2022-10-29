@@ -1,301 +1,9 @@
 <pre>
-
-
-List DUMP at src/main.cpp(line: 13) at main
+List DUMP at src/main.cpp(line: 11) at main
 <b>Ctoring</b>
 List[0061FEF8]
 {
-    capacity = 10
-    size     = 0
-
-    head = 1
-    tail = 1
-    free = 1
-
-}
-
-    Nodes[00EC34D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
-        [2]       -505      3        1   
-        [3]       -505      4        2   
-        [4]       -505      5        3   
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph1.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 26) at main
-<b>Add few elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 3
-
-    head = 3
-    tail = 2
-    free = 4
-
-}
-
-    Nodes[00EC34D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       15        2        3   
-        [2]       16        0        1     <--- TAIL
-        [3]       14        1        0     <--- HEAD
-        [4]       -505      5        0     <--- FREE
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph2.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 48) at main
-<b>After adding and removing elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 4
-
-    head = 3
-    tail = 6
-    free = 1
-
-}
-
-    Nodes[00EC34D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      5        0     <--- FREE
-        [2]       16        4        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        2   
-        [5]       -505      7        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        5   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph3.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 56) at main
-<b>Insert two more elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 6
-
-    head = 3
-    tail = 6
-    free = 7
-
-}
-
-    Nodes[00EC34D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       31        5        2   
-        [2]       16        1        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        5   
-        [5]       32        4        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph4.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 61) at main
-<b>After sorting</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 6
-
-    head = 1
-    tail = 6
-    free = 7
-
-}
-
-    Nodes[00EC34D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       14        2        0     <--- HEAD
-        [2]       16        3        1   
-        [3]       31        4        2   
-        [4]       32        5        3   
-        [5]       18        6        4   
-        [6]       20        0        5     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph5.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 13) at main
-<b>Ctoring</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 0
-
-    head = 1
-    tail = 1
-    free = 1
-
-}
-
-    Nodes[00D434D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
-        [2]       -505      3        1   
-        [3]       -505      4        2   
-        [4]       -505      5        3   
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph1.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 26) at main
-<b>Add few elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 3
-
-    head = 3
-    tail = 2
-    free = 4
-
-}
-
-    Nodes[00D434D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       15        2        3   
-        [2]       16        0        1     <--- TAIL
-        [3]       14        1        0     <--- HEAD
-        [4]       -505      5        0     <--- FREE
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph2.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 48) at main
-<b>After adding and removing elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 4
-
-    head = 3
-    tail = 6
-    free = 1
-
-}
-
-    Nodes[00D434D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      5        0     <--- FREE
-        [2]       16        4        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        2   
-        [5]       -505      7        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        5   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph3.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 56) at main
-<b>Insert two more elements</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 6
-
-    head = 3
-    tail = 6
-    free = 7
-
-}
-
-    Nodes[00D434D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       31        5        2   
-        [2]       16        1        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        5   
-        [5]       32        4        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph4.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 61) at main
-<b>After sorting</b>
-List[0061FEF8]
-{
-    capacity = 10
-    size     = 6
-
-    head = 1
-    tail = 6
-    free = 7
-
-}
-
-    Nodes[00D434D8]
-    {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       14        2        0     <--- HEAD
-        [2]       16        3        1   
-        [3]       31        4        2   
-        [4]       32        5        3   
-        [5]       18        6        4   
-        [6]       20        0        5     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
-    }
-<img width=900 src="../images/graph5.png"><br><hr>
-
-List DUMP at src/main.cpp(line: 13) at main
-<b>Ctoring</b>
-List[0061FEF8]
-{
-	capacity = 10
+	capacity = 15
 	size     = 0
 
 	head = 1
@@ -305,27 +13,67 @@ List[0061FEF8]
 	is_sorted = 1
 }
 
-    Nodes[00DC34D8]
+    Nodes[00982B30]
     {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
-        [2]       -505      3        1   
-        [3]       -505      4        2   
-        [4]       -505      5        3   
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   -505      2        0     <--- HEAD  <--- TAIL  <--- FREE
+        [2]   -505      3        1   
+        [3]   -505      4        2   
+        [4]   -505      5        3   
+        [5]   -505      6        4   
+        [6]   -505      7        5   
+        [7]   -505      8        6   
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
     }
-<img width=900 src="../images/graph1.png"><br><hr>
+<img width=1800 src="../images/graph1.png"><br><hr>
+
+List DUMP at src/main.cpp(line: 21) at main
+<b>Add few elements</b>
+List[0061FEF8]
+{
+	capacity = 15
+	size     = 2
+
+	head = 1
+	tail = 2
+	free = 3
+
+	is_sorted = 0
+}
+
+    Nodes[00982B30]
+    {
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   15        2        0     <--- HEAD
+        [2]   16        0        1     <--- TAIL
+        [3]   -505      4        0     <--- FREE
+        [4]   -505      5        3   
+        [5]   -505      6        4   
+        [6]   -505      7        5   
+        [7]   -505      8        6   
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
+    }
+<img width=1800 src="../images/graph2.png"><br><hr>
 
 List DUMP at src/main.cpp(line: 26) at main
 <b>Add few elements</b>
 List[0061FEF8]
 {
-	capacity = 10
+	capacity = 15
 	size     = 3
 
 	head = 3
@@ -335,27 +83,102 @@ List[0061FEF8]
 	is_sorted = 0
 }
 
-    Nodes[00DC34D8]
+    Nodes[00982B30]
     {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       15        2        3   
-        [2]       16        0        1     <--- TAIL
-        [3]       14        1        0     <--- HEAD
-        [4]       -505      5        0     <--- FREE
-        [5]       -505      6        4   
-        [6]       -505      7        5   
-        [7]       -505      8        6   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   15        2        3   
+        [2]   16        0        1     <--- TAIL
+        [3]   14        1        0     <--- HEAD
+        [4]   -505      5        0     <--- FREE
+        [5]   -505      6        4   
+        [6]   -505      7        5   
+        [7]   -505      8        6   
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
     }
-<img width=900 src="../images/graph2.png"><br><hr>
+<img width=1800 src="../images/graph3.png"><br><hr>
 
-List DUMP at src/main.cpp(line: 48) at main
-<b>After adding and removing elements</b>
+List DUMP at src/main.cpp(line: 34) at main
+<b>After adding elements</b>
 List[0061FEF8]
 {
-	capacity = 10
+	capacity = 15
+	size     = 6
+
+	head = 3
+	tail = 6
+	free = 7
+
+	is_sorted = 0
+}
+
+    Nodes[00982B30]
+    {
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   15        2        5   
+        [2]   16        4        1   
+        [3]   14        5        0     <--- HEAD
+        [4]   18        6        2   
+        [5]   19        1        3   
+        [6]   20        0        4     <--- TAIL
+        [7]   -505      8        0     <--- FREE
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
+    }
+<img width=1800 src="../images/graph4.png"><br><hr>
+
+List DUMP at src/main.cpp(line: 41) at main
+<b>first remove</b>
+List[0061FEF8]
+{
+	capacity = 15
+	size     = 5
+
+	head = 3
+	tail = 6
+	free = 5
+
+	is_sorted = 0
+}
+
+    Nodes[00982B30]
+    {
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   15        2        3   
+        [2]   16        4        1   
+        [3]   14        1        0     <--- HEAD
+        [4]   18        6        2   
+        [5]   -505      7        0     <--- FREE
+        [6]   20        0        4     <--- TAIL
+        [7]   -505      8        5   
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
+    }
+<img width=1800 src="../images/graph5.png"><br><hr>
+
+List DUMP at src/main.cpp(line: 47) at main
+<b>first remove</b>
+List[0061FEF8]
+{
+	capacity = 15
 	size     = 4
 
 	head = 3
@@ -365,27 +188,32 @@ List[0061FEF8]
 	is_sorted = 0
 }
 
-    Nodes[00DC34D8]
+    Nodes[00982B30]
     {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       -505      5        0     <--- FREE
-        [2]       16        4        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        2   
-        [5]       -505      7        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        5   
-        [8]       -505      9        7   
-        [9]       -505      0        8   
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   -505      5        0     <--- FREE
+        [2]   16        4        3   
+        [3]   14        2        0     <--- HEAD
+        [4]   18        6        2   
+        [5]   -505      7        1   
+        [6]   20        0        4     <--- TAIL
+        [7]   -505      8        5   
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
     }
-<img width=900 src="../images/graph3.png"><br><hr>
+<img width=1800 src="../images/graph6.png"><br><hr>
 
-List DUMP at src/main.cpp(line: 56) at main
+List DUMP at src/main.cpp(line: 55) at main
 <b>Insert two more elements</b>
 List[0061FEF8]
 {
-	capacity = 10
+	capacity = 15
 	size     = 6
 
 	head = 3
@@ -395,27 +223,32 @@ List[0061FEF8]
 	is_sorted = 0
 }
 
-    Nodes[00DC34D8]
+    Nodes[00982B30]
     {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       31        5        2   
-        [2]       16        1        3   
-        [3]       14        2        0     <--- HEAD
-        [4]       18        6        5   
-        [5]       32        4        1   
-        [6]       20        0        4     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   31        5        2   
+        [2]   16        1        3   
+        [3]   14        2        0     <--- HEAD
+        [4]   18        6        5   
+        [5]   32        4        1   
+        [6]   20        0        4     <--- TAIL
+        [7]   -505      8        0     <--- FREE
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
     }
-<img width=900 src="../images/graph4.png"><br><hr>
+<img width=1800 src="../images/graph7.png"><br><hr>
 
-List DUMP at src/main.cpp(line: 61) at main
+List DUMP at src/main.cpp(line: 60) at main
 <b>After sorting</b>
 List[0061FEF8]
 {
-	capacity = 10
+	capacity = 15
 	size     = 6
 
 	head = 1
@@ -425,18 +258,23 @@ List[0061FEF8]
 	is_sorted = 0
 }
 
-    Nodes[00DC34D8]
+    Nodes[00982B30]
     {
-        phys_adr  value     next     prev
-        [0]       0         0        0   
-        [1]       14        2        0     <--- HEAD
-        [2]       16        3        1   
-        [3]       31        4        2   
-        [4]       32        5        3   
-        [5]       18        6        4   
-        [6]       20        0        5     <--- TAIL
-        [7]       -505      8        0     <--- FREE
-        [8]       -505      9        7   
-        [9]       -505      0        8   
+        indx  value     next     prev
+        [0]   0         0        0   
+        [1]   14        2        0     <--- HEAD
+        [2]   16        3        1   
+        [3]   31        4        2   
+        [4]   32        5        3   
+        [5]   18        6        4   
+        [6]   20        0        5     <--- TAIL
+        [7]   -505      8        0     <--- FREE
+        [8]   -505      9        7   
+        [9]   -505      10       8   
+        [10]   -505      11       9   
+        [11]   -505      12       10  
+        [12]   -505      13       11  
+        [13]   -505      14       12  
+        [14]   -505      0        13  
     }
-<img width=900 src="../images/graph5.png"><br><hr>
+<img width=1800 src="../images/graph8.png"><br><hr>
