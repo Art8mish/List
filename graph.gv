@@ -1,0 +1,54 @@
+digraph list{
+	rankdir=LR;
+spline = ortho;
+	0[shape=record,color=black,label="<f0>indx 0|data 0|{<f2>prev 1 | <f1>next 6}"]
+0 -> 1 [style="invis", weight=1000,constraint=true]
+1 -> 2 [style="invis", weight=1000,constraint=true]
+2 -> 3 [style="invis", weight=1000,constraint=true]
+3 -> 4 [style="invis", weight=1000,constraint=true]
+4 -> 5 [style="invis", weight=1000,constraint=true]
+5 -> 6 [style="invis", weight=1000,constraint=true]
+6 -> 7 [style="invis", weight=1000,constraint=true]
+7 -> 8 [style="invis", weight=1000,constraint=true]
+8 -> 9 [style="invis", weight=1000,constraint=true]
+9 -> 10 [style="invis", weight=1000,constraint=true]
+10 -> 11 [style="invis", weight=1000,constraint=true]
+11 -> 12 [style="invis", weight=1000,constraint=true]
+12 -> 13 [style="invis", weight=1000,constraint=true]
+13 -> 14 [style="invis", weight=1000,constraint=true]
+	1[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 1|data 14|{<f2>prev 0 | <f1>next 2}"]
+	1:<f1>:s->2:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	2[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 2|data 16|{<f2>prev 1 | <f1>next 3}"]
+	2:<f1>:s->3:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	3[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 3|data 31|{<f2>prev 2 | <f1>next 4}"]
+	3:<f1>:s->4:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	4[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 4|data 32|{<f2>prev 3 | <f1>next 5}"]
+	4:<f1>:s->5:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	5[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 5|data 18|{<f2>prev 4 | <f1>next 6}"]
+	5:<f1>:s->6:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	6[style="filled",fillcolor="peachpuff"shape=record,color=red3,label="<f0>indx 6|data 20|{<f2>prev 5 | <f1>next 0}"]
+	6:<f1>:s->0:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	7[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 7|data POISON|{<f2>prev 0 | <f1>next 8}"]
+	7:<f1>:s->8:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	8[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 8|data POISON|{<f2>prev 7 | <f1>next 9}"]
+	8:<f1>:s->9:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	9[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 9|data POISON|{<f2>prev 8 | <f1>next 10}"]
+	9:<f1>:s->10:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	10[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 10|data POISON|{<f2>prev 9 | <f1>next 11}"]
+	10:<f1>:s->11:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	11[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 11|data POISON|{<f2>prev 10 | <f1>next 12}"]
+	11:<f1>:s->12:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	12[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 12|data POISON|{<f2>prev 11 | <f1>next 13}"]
+	12:<f1>:s->13:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	13[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 13|data POISON|{<f2>prev 12 | <f1>next 14}"]
+	13:<f1>:s->14:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	14[style="filled",fillcolor="darkolivegreen2"shape=record,color=seagreen,label="<f0>indx 14|data POISON|{<f2>prev 13 | <f1>next 0}"]
+	14:<f1>:s->0:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+	0:<f1>:s->1:<f2>:s[dir=both,weight = 1, constraint=true,style="dashed"]
+
+HEAD[style="filled",fillcolor="skyblue",label="HEAD = 1"]	HEAD->1:<f0>{rank = same; 1; HEAD;}
+
+TAIL[style="filled",fillcolor="skyblue",label="TAIL = 6"]	TAIL->6:<f0>{rank = same; 6; TAIL;}; 
+
+FREE[style="filled",fillcolor="skyblue",label="FREE = 7"]	FREE->7:<f0>{rank = same; 7; FREE;};
+}
